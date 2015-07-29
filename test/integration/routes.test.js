@@ -38,14 +38,26 @@ describe('Routes', function() {
     routeTest(done, '/starwarsmovies', 200, 'Hope');
   });
 
-  it('should respond to the /cal route', function (done) {
-    var d = new Date();
-    routeTest(done, '/cal', 200, d.getMonth());
-  });
-
   it('should throw 403 at an /arbitrary route', function (done) {
     routeTest(done, '/arbitrary', 403);
   });
+
+  var MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  describe("cal", function() {
+    it('should respond to the /cal route', function (done) {
+      var d = new Date();
+      routeTest(done, '/cal', 200, MONTH_NAMES[d.getMonth()] + " " + d.getFullYear());
+    });
+
+    it('should respond to the /cal/2015 route', function (done) {
+      routeTest(done, '/cal/2015', 200, '2015');
+    });
+
+    it('should respond to the /cal/1/2015 route', function (done) {
+      routeTest(done, '/cal/1/2015', 200, 'January 2015');
+    });
+  })
 
 });
 
