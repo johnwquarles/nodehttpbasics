@@ -1,0 +1,25 @@
+{
+  "name": "nodehttpbasics",
+  "version": "1.0.0",
+  "description": "Basic node server exercise. Serves up weather data, an array with the titles of the Star Wars movies, and can also run the node-cal app I made earlier by doing /cal, /cal/2015, /cal/2/2015 etc.",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha test/unit --recursive",
+    "test-integration": "mocha test/integration --recursive",
+    "test-all": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnwquarles/nodehttpbasics.git"
+  },
+  "author": "johnwquarles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnwquarles/nodehttpbasics/issues"
+  },
+  "homepage": "https://github.com/johnwquarles/nodehttpbasics#readme",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5"
+  }
+}
